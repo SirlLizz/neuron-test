@@ -12,7 +12,9 @@ let brain = require('brain.js'),
 
 net.fromJSON(require('./.data/mnistTrain.json'));
 
-app.set('port', 5000);
+let port = 6431
+
+app.set('port', port);
 app.use('/static', express.static(__dirname + '/static'));
 app.use(express.static(__dirname + '/public/'));
 
@@ -20,8 +22,8 @@ app.get('/', function(request, response) {
     response.sendFile(path.join(__dirname, 'index.html'));
 });
 
-server.listen(5000, function() {
-    console.log('Run server by port 5000');
+server.listen(port, function() {
+    console.log('Run server by port ' + port);
 });
 
 app.post('/check_data', urlencodedParser, function (
