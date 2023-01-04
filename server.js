@@ -53,3 +53,5 @@ app.post('/check_data', urlencodedParser, function (
     result.reduce(function(p,c,i){if(p<c) {maxIndex=i; return c;} else return p;});
     response.send(maxIndex.toString())
 })
+
+module.exports = app;
