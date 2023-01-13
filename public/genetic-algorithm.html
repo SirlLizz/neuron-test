@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/genetic-algorithm/genetic-algorithm.js"></script>
+    <link rel="stylesheet" href="genetic-algorithm.css"/>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <tbody>
+            <tr >
+                <td>
+                    <canvas id="genetic-canvas"></canvas>
+                </td>
+            </tr>
+            <tr class="table-row">
+                <td>
+                    <label>
+                        Количество промежуточных точек маршрута:
+                        <input type="number" id="intermediate_point" value=7 min=1 step=1>
+                    </label>
+                    <br>
+                </td>
+            </tr>
+            <tr class="table-row">
+                <td>
+                    <label>
+                        Количество особей:
+                        <input type="number" id="count_individual" value=20 min=1 step=1>
+                    </label>
+                    <br>
+                </td>
+            </tr>
+            <tr class="table-row">
+                <td>
+                    <button type="button" id="startButton">Старт</button>
+                    <button type="button" id="stopButton">Стоп</button>
+                    <button type="button" id="backButton">Назад</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

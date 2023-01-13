@@ -132,6 +132,10 @@ window.onload = function () {
         clearer();
     })
 
+    document.getElementById("backButton").addEventListener("click", function () {
+        window.location.href = '/'
+    });
+
     document.getElementById('sketchRecogniseButton').addEventListener('click', function (event) {
         event.preventDefault();
         if (isRecognized) return;
@@ -213,7 +217,11 @@ window.onload = function () {
             isRecognized = true;
         });
     })
+
+
 }
+
+
 
 function centerImage(img) {
     let meanX = 0;

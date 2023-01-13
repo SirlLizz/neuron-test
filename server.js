@@ -19,7 +19,15 @@ app.use('/static', express.static(__dirname + '/static'));
 app.use(express.static(__dirname + '/public/'));
 
 app.get('/', function(request, response) {
-    response.sendFile(path.join(__dirname, 'index.html'));
+    response.sendFile(path.join(__dirname, '/public/index.html'));
+});
+
+app.get('/mnist-neuron', function(request, response) {
+    response.sendFile(path.join(__dirname, '/public/mnist-neuron.html'));
+});
+
+app.get('/genetic-algorithm', function(request, response) {
+    response.sendFile(path.join(__dirname, '/public/genetic-algorithm.html'));
 });
 
 server.listen(port, function() {
@@ -39,18 +47,6 @@ app.post('/check_data', urlencodedParser, function (
 
     let maxIndex = 0;
     softmax.reduce(function(p,c,i){if(p<c) {maxIndex=i; return c;} else return p;});
-
-    let result = [];
-
-    for (let i=0; i<output.length; i++)
-    {
-        if (i===maxIndex)
-            result.push(1);
-        else
-            result.push(0);
-    }
-    maxIndex = 0;
-    result.reduce(function(p,c,i){if(p<c) {maxIndex=i; return c;} else return p;});
     response.send(maxIndex.toString())
 })
 
