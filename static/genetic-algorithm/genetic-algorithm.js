@@ -67,8 +67,7 @@ window.onload = function () {
                 console.log(JSON.parse(JSON.stringify(population)))
                 numGen++
                 render(population,numGen )
-                let round = (a, b) => Math.round(a/b)*b
-                if(round(perfect_len, 0.000001) === round(population[0].size,0.000001)){
+                if((population[0].size / perfect_len * 100).toFixed(3) === "100.000"){
                     clearInterval(set_interval_id)
                     alert("Ответ был найден в " + numGen + " поколении");
                 }
