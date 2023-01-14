@@ -1,4 +1,4 @@
-const brain = require('brain.js');
+const brain = require('../node_modules/brain.js/lib/brain');
 let network = new brain.NeuralNetwork();
 const fs = require('fs');
 const mn = require('mnist-javascript')
